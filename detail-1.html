@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workspace Design - 1 (Advocate Office)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Arial:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            background: #f4f4f4;
+            overflow-x: hidden;
+        }
+        h3 {
+            margin: 20px;
+            margin-left: 0px;
+        }
+        p {
+            margin: 20px;
+            font-size: 13px;
+        }
+        .content {
+            max-width: 1200px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .extra-detail-container {
+            display: block;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .detail-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .carousel {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        .carousel-images img {
+            width: 100%;
+            display: none;
+        }
+        .carousel img {
+    width: 100%;  /* Set the width */
+    height: 400px; /* Set the height */
+    object-fit: cover; /* This helps to maintain the aspect ratio without distorting the image */
+}
+
+        .carousel button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 100;
+        }
+        .carousel .prev { left: 10px; }
+        .carousel .next { right: 10px; }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+            padding-left: 20px;
+            position: relative;
+            font-size: 13px;
+        }
+        li::before {
+            content: '➔';
+            position: absolute;
+            left: 0;
+            color: black;
+            font-size: 13px;
+
+        }
+        @media (max-width: 768px) {
+            .detail-container, .extra-detail-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h3>Workspace Design - 1 (Advocate Office)</h3>
+        <section class="detail-container">
+            <div class="carousel">
+                <div class="carousel-images">
+                    <img src="./assets/images/a1.jpeg" alt="Office Image 1" style="display: block;">
+                    <img src="./assets/images/a2.jpeg" alt="Office Image 2">
+                    <img src="./assets/images/a3.jpeg" alt="Office Image 3">
+                    <img src="./assets/images/a4.jpeg" alt="Office Image 4">
+                    <img src="./assets/images/a5.jpeg" alt="Office Image 5">
+                    <img src="./assets/images/a6.jpeg" alt="Office Image 6">
+                </div>
+                <button class="prev" aria-label="Previous" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="next" aria-label="Next" onclick="changeSlide(1)">&#10095;</button>
+            </div>
+            <article>
+                <ul>
+                    <li>To create a modern, functional, and aesthetically pleasing office environment that promotes productivity, collaboration, and comfort.</li>
+                    <li>Each space is designed with a specific purpose, ensuring a cohesive yet distinctive look throughout the office.</li>
+                    <li>This office showcases a modern interior featuring sleek wooden accent walls.</li>
+                    <li>The design emphasizes a sophisticated and professional atmosphere with a combination of neutral tones and elegant textures.</li>
+                    <li>A private office with a textured wooden wall, a minimalist desk, and elegant shelving, emphasizing a refined and focused work environment.</li>
+                    <li>A stylish lounge area with a cozy sofa, patterned armchairs, and a sleek coffee table, ideal for informal meetings and relaxation.</li>
+                     <li>A collaborative workspace with multiple workstations, ergonomic chairs, and ample storage, promoting productivity and teamwork.</li>                
+                </ul>
+            </article>
+        </section>
+        <section class="extra-detail-container">
+            <ul>       
+                <li>The reception area combines modern aesthetics with functional design, featuring a green sofa, a stylish coffee table, and a decorative partition.</li>
+                <li>This waiting area incorporates a contemporary design with a comfortable seating arrangement, a patterned rug, and an accent wall, providing a welcoming atmosphere for visitors.</li>
+                <li><strong>Conclusion</strong> : This design brief aims to transform the office space into a harmonious blend of style, comfort, and functionality, ensuring that each area serves its intended purpose while contributing to the overall aesthetic appeal of the office.</li>
+            </ul>        
+        </section>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="local/path/to/jquery.min.js"><\/script>')</script>
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function changeSlide(n) {
+        slideIndex += n;
+        showSlides();
+    }
+
+    function showSlides() {
+        let slides = document.querySelectorAll(".carousel-images img");
+        slideIndex = (slideIndex + slides.length) % slides.length;
+        slides.forEach(slide => slide.style.display = 'none');
+        slides[slideIndex].style.display = 'block';
+    }
+</script>
+</html>
