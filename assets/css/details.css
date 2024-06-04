@@ -41,7 +41,7 @@ body {
             .carousel img {
 width: 100%;
     height: 400px; /* Adjust height automatically */
-    object-fit: cover; /* Maintain aspect ratio without cropping */
+    object-fit: fill; /* Maintain aspect ratio without cropping */
             }
             .carousel button {
             position: absolute;
@@ -76,12 +76,13 @@ width: 100%;
             }
             @media (max-width: 768px) {
  .carousel {
-        height: auto; /* Allow the carousel to resize based on content */
+        height: 400px; /* Allow the carousel to resize based on content */
+ object-fit: fill;
     }
 
     .carousel img {
-        height: 300px; /* Smaller fixed height on smaller screens */
-        object-fit: contain; /* Change to contain to avoid cropping */
+        height: 400px; /* Smaller fixed height on smaller screens */
+        object-fit: fill; /* Change to contain to avoid cropping */
     }
             .detail-container, .extra-detail-container {
             grid-template-columns: 1fr;
@@ -89,6 +90,6 @@ width: 100%;
             }
 @media (max-width: 480px) {
     .carousel img {
-        height: 200px; /* Even smaller height for very small screens */
+        height: 400px; /* Even smaller height for very small screens */
     }
 }
