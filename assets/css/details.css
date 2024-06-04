@@ -41,7 +41,7 @@ body {
             .carousel img {
 width: 100%;
     height: 400px; /* Adjust height automatically */
-    object-fit: fill; /* Maintain aspect ratio without cropping */
+    object-fit: contain; /* Maintain aspect ratio without cropping */
             }
             .carousel button {
             position: absolute;
@@ -77,12 +77,12 @@ width: 100%;
             @media (max-width: 768px) {
  .carousel {
         height: 400px; /* Allow the carousel to resize based on content */
- object-fit: fill;
+ object-fit: contain;
     }
 
     .carousel img {
         height: 400px; /* Smaller fixed height on smaller screens */
-        object-fit: fill; /* Change to contain to avoid cropping */
+        object-fit: contain; /* Change to contain to avoid cropping */
     }
             .detail-container, .extra-detail-container {
             grid-template-columns: 1fr;
