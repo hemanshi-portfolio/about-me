@@ -40,7 +40,7 @@ body {
             }
             .carousel img {
 width: 100%;
-    height: auto; /* Adjust height automatically */
+    height: 400px; /* Adjust height automatically */
     object-fit: cover; /* Maintain aspect ratio without cropping */
             }
             .carousel button {
